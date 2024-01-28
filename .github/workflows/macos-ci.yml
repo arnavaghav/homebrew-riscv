@@ -5,7 +5,21 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
+  
+  # Manual workflow trigger for debugging.
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug        
+  
+    
 jobs:
   build:
 
